@@ -343,10 +343,22 @@
     "@types/node" "*"
     "@types/responselike" "*"
 
+"@types/codemirror@0.0.109":
+  version "0.0.109"
+  resolved "https://registry.yarnpkg.com/@types/codemirror/-/codemirror-0.0.109.tgz#89d575ff1c7b462c4c3b8654f8bb38e5622e9036"
+  integrity sha512-cSdiHeeLjvGn649lRTNeYrVCDOgDrtP+bDDSFDd1TF+i0jKGPDRozno2NOJ9lTniso+taiv4kiVS8dgM8Jm5lg==
+  dependencies:
+    "@types/tern" "*"
+
 "@types/eslint-visitor-keys@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
   integrity sha512-OCutwjDZ4aFS6PB1UZ988C4YgwlBHJd6wCeQqaLdmadZ/7e+w79+hbMUFC1QXDNCmdyoRfAFdm0RypzwR+Qpag==
+
+"@types/estree@*":
+  version "0.0.47"
+  resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.47.tgz#d7a51db20f0650efec24cd04994f523d93172ed4"
+  integrity sha512-c5ciR06jK8u9BstrmJyO97m+klJrrhCf9u3rLu3DEAJBirxRqSCvDQoYKmxuYwQI5SZChAWu+tq9oVlGRuzPAg==
 
 "@types/fs-extra@^9.0.1":
   version "9.0.11"
@@ -385,6 +397,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/marked@^2.0.2":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@types/marked/-/marked-2.0.3.tgz#c8ea93684e530cc3b667d3e7226556dd0844ad1f"
+  integrity sha512-lbhSN1rht/tQ+dSWxawCzGgTfxe9DB31iLgiT1ZVT5lshpam/nyOA1m3tKHRoNPctB2ukSL22JZI5Fr+WI/zYg==
+
 "@types/minimatch@*":
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.4.tgz#f0ec25dbf2f0e4b18647313ac031134ca5b24b21"
@@ -406,6 +423,13 @@
   integrity sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==
   dependencies:
     "@types/node" "*"
+
+"@types/tern@*":
+  version "0.23.3"
+  resolved "https://registry.yarnpkg.com/@types/tern/-/tern-0.23.3.tgz#4b54538f04a88c9ff79de1f6f94f575a7f339460"
+  integrity sha512-imDtS4TAoTcXk0g7u4kkWqedB3E4qpjXzCpD2LU5M5NAXHzCDsypyvXSaG7mM8DKYkCRa7tFp4tS/lp/Wo7Q3w==
+  dependencies:
+    "@types/estree" "*"
 
 "@types/yauzl@^2.9.1":
   version "2.9.1"
@@ -883,6 +907,18 @@ code-point-at@^1.0.0:
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
+codemirror-spell-checker@1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/codemirror-spell-checker/-/codemirror-spell-checker-1.1.2.tgz#1c660f9089483ccb5113b9ba9ca19c3f4993371e"
+  integrity sha1-HGYPkIlIPMtRE7m6nKGcP0mTNx4=
+  dependencies:
+    typo-js "*"
+
+codemirror@^5.61.0:
+  version "5.61.1"
+  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.61.1.tgz#ccfc8a43b8fcfb8b12e8e75b5ffde48d541406e0"
+  integrity sha512-+D1NZjAucuzE93vJGbAaXzvoBHwp9nJZWWWF9utjv25+5AZUiah6CIlfb4ikG4MoDsFsCG8niiJH5++OO2LgIQ==
+
 color-convert@^1.9.0:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.3.tgz#bb71850690e1f136567de629d2d5471deda4c1e8"
@@ -1138,6 +1174,17 @@ duplexer3@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
   integrity sha1-7gHdHKwO08vH/b6jfcCo8c4ALOI=
+
+easymde@^2.15.0:
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/easymde/-/easymde-2.15.0.tgz#73667c4879d8687b07651d6259ee652bba5d0b00"
+  integrity sha512-9jMRIVvKt1d0UjRN45yotUYECAM4xvw0TTAQw8sYDONP++keWJVnd8Xrn+V+vQEN/v9/X0SWEoo1rFSgCooGpw==
+  dependencies:
+    "@types/codemirror" "0.0.109"
+    "@types/marked" "^2.0.2"
+    codemirror "^5.61.0"
+    codemirror-spell-checker "1.1.2"
+    marked "^2.0.3"
 
 ecc-jsbn@~0.1.1:
   version "0.1.2"
@@ -2585,6 +2632,11 @@ map-obj@^1.0.0, map-obj@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
   integrity sha1-2TPOuSBdgr3PSIb2dCvcK03qFG0=
+
+marked@^2.0.3:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-2.0.6.tgz#c3ab1403b9b70f26acd92590fc272eb1718e778c"
+  integrity sha512-S2mYj0FzTQa0dLddssqwRVW4EOJOVJ355Xm2Vcbm+LU7GQRGWvwbO5K87OaPSOux2AwTSgtPPaXmc8sDPrhn2A==
 
 matcher@^3.0.0:
   version "3.0.0"
@@ -4092,6 +4144,11 @@ typescript@^4.0.2:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.3.2.tgz#399ab18aac45802d6f2498de5054fcbbe716a805"
   integrity sha512-zZ4hShnmnoVnAHpVHWpTcxdv7dWP60S2FsydQLV8V5PbS3FifjWFFRiHSWpDJahly88PRyV5teTSLoq4eG7mKw==
+
+typo-js@*:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/typo-js/-/typo-js-1.2.0.tgz#dbe58de3a6dcbbe260b78bf290ee761b008a28e8"
+  integrity sha512-dELuLBVa2jvWdU/CHTKi2L/POYaRupv942k+vRsFXsM17acXesQGAiGCio82RW7fvcr7bkuD/Zj8XpUh6aPC2A==
 
 unbox-primitive@^1.0.1:
   version "1.0.1"
