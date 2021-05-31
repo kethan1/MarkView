@@ -4,7 +4,6 @@
     "allowJs": true,
     "module": "commonjs",
     "noImplicitAny": true,
-    "sourceMap": true,
     "baseUrl": ".",
     "outDir": "dist",
     "moduleResolution": "node",
@@ -15,6 +14,6 @@
   },
   "include": [
     "src/**/*",
-    "src/render.ts"
+    "src/editor.ts"
   ]
 }
