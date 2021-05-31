@@ -7,10 +7,15 @@
         <script src="../dist/editor.js" defer></script>
         <link rel="stylesheet" href="./code_highlighting/github.min.css" async>
         <script src="./code_highlighting/highlight.min.js" async></script>
-        <link rel="stylesheet" href="../node_modules/easymde/dist/easymde.min.css">
+        <link href="../node_modules/easymde/dist/easymde.min.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+        <script src="../node_modules/@materializecss/materialize/dist/js/materialize.min.js" async></script>
+        <link rel="stylesheet" href="../node_modules/@materializecss/materialize/dist/css/materialize.min.css">
     </head>
     <body>
-        <h1>MarkView</h1>
+        <h3>MarkView</h3>
+        <a href="javascript:void(0);" onclick="window.location.href = 'home.html'">Home</a>
+        <br>
+        <br>
         <textarea id="editor"></textarea>
     </body>
 </html>

@@ -22,10 +22,10 @@ const createWindow = (): void => {
     });
 
     // and load the index.html of the app.
-    mainWindow.loadFile(path.join(__dirname, '../src/home_screen.html'));
+    mainWindow.loadFile(path.join(__dirname, '../src/home.html'));
 
     // Open the DevTools.
-    mainWindow.webContents.openDevTools();
+    // mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished

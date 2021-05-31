@@ -1,0 +1,55 @@
+name: Build Electron App
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-10.15
+          - windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14.x"
+      - name: MacOS Fix Network Flakiness
+        shell: bash
+        run: |
+            if [ "$RUNNER_OS" == "macOS" ]; then
+              sudo sysctl -w net.link.generic.system.hwcksum_tx=0
+              sudo sysctl -w net.link.generic.system.hwcksum_rx=0
+            fi
+      - name: Install Dependencies
+        shell: bash
+        run: |
+            if [ "$RUNNER_OS" == "Linux" ]; then
+              echo "Installing Linux Dependencies"
+              sudo apt-get install dpkg
+              sudo apt-get install fakeroot
+              sudo apt-get install rpm
+              sudo apt-get install snapd
+              sudo apt-get install snapcraft
+            elif [ "$RUNNER_OS" == "Windows" ]; then
+              echo "Installing Windows Dependencies"
+              powershell Install-WindowsFeature Net-Framework-Core
+              choco install -y wixtoolset
+              echo "C:\Program Files (x86)\WiX Toolset v3.11\bin" >> $GITHUB_PATH
+            fi
+      - name: Install Yarn Dependencies 
+        shell: bash
+        run: yarn install --frozen-lockfile --network-timeout 100000
+      - name: Build App
+        shell: bash
+        run: | 
+            yarn make
+            yarn make --arch arm64
+            if [ "$RUNNER_OS" == "Windows" ]; then
+              yarn make --arch ia32
+            fi
+        env:
+          CURRENT_WORKFLOW: "Build"
