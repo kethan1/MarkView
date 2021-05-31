@@ -69,8 +69,8 @@ module.exports = {
                 //     }
                 // }
                 for (let option of options) {
-                    if (option["arch"] == "ia32") let currentArch = "x86";
-                    else let currentArch = option["arch"];
+                    if (option["arch"] == "ia32") var currentArch = "x86";
+                    else var currentArch = option["arch"];
                     for (let artifact of option["artifacts"]) {
                         if (artifact.includes("deb")) fs.rename(artifact, path.join(outputFolder, `${appName}-Linux-${currentArch}.deb`), function(err) { if (err) throw err; });
                         else if (artifact.includes("rpm")) fs.rename(artifact, path.join(outputFolder, `${appName}-Linux-${currentArch}.rpm`), function(err) { if (err) throw err; });
