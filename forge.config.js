@@ -26,7 +26,7 @@ module.exports = {
             "config": {
                 "language": 1033,
                 "manufacturer": "Kethan Vegunta",
-                "description": "Simple To Do App!",
+                "description": "Markdown note taking app!",
                 "name": "MarkView",
                 "shortName": "MarkView",
                 "shortcutFolderName": "MarkView",
