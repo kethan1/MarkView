@@ -6,15 +6,9 @@ module.exports = {
     packagerConfig: {
         "asar": true,
         "icon": path.join(__dirname, "/assets/app_icons/app_icon"),
-        "executableName": "MarkView",
+        "executableName": "markview",
     },
     makers: [
-        {
-            "name": "@electron-forge/maker-zip",
-            "platforms": [
-                "darwin"
-            ]
-        },
         {
             "name": "@electron-forge/maker-dmg",
             "config": {
@@ -32,7 +26,7 @@ module.exports = {
                 "shortcutFolderName": "MarkView",
                 "programFilesFolderName": "MarkView",
                 "appIconPath": path.join(__dirname, "/assets/app_icons/app_icon.ico"),
-                "exe": "MarkView"
+                "exe": "markview"
             }
         },
         {
