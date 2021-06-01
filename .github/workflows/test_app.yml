@@ -1,4 +1,4 @@
-name: Build & Publish Electron App
+name: Test App with Jest
 
 on:
   push:
