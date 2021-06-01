@@ -1,0 +1,28 @@
+name: Build & Publish Electron App
+
+on:
+  push:
+    tags:
+    - '*'
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos
+          - windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14.x"
+      - name: Test and Install
+        shell: bash
+        run: |
+            npm install -g yarn
+            yarn
+            yarn test
