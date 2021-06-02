@@ -5,8 +5,7 @@
     "module": "commonjs",
     "noImplicitAny": true,
     "baseUrl": ".",
-    // "outDir": "dist",
-    "outDir": "/src/TypeScriptCompiled",
+    "outDir": "src/JS",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "paths": {
@@ -14,7 +13,6 @@
     }
   },
   "include": [
-    "src/**/*",
-    "src/editor.ts"
+    "src/**/*"
   ]
 }
