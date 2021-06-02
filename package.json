@@ -3,7 +3,7 @@
     "productName": "MarkView",
     "version": "1.0.0",
     "description": "A markdown editor!",
-    "main": "dist/main.js",
+    "main": "src/TypeScriptCompiled/main.js",
     "scripts": {
         "start": "tsc && electron-forge start",
         "package": "tsc && electron-forge package",

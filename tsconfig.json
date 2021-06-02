@@ -5,7 +5,8 @@
     "module": "commonjs",
     "noImplicitAny": true,
     "baseUrl": ".",
-    "outDir": "dist",
+    // "outDir": "dist",
+    "outDir": "/src/TypeScriptCompiled",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "paths": {

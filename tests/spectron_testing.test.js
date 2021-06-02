@@ -1,7 +1,8 @@
 const { Application } = require("spectron"),
     path = require("path"),
     process = require("process"),
-    os = require("os");
+    os = require("os"),
+    fs = require("fs");
 
 var current_platform = os.platform();
 var current_arch = os.arch();
@@ -19,6 +20,8 @@ switch (current_platform) {
 }
 
 var path_to_app = `out/MarkView-${current_platform}-${current_arch === "x86" ? "ia32": current_arch}/markview${extension}${current_platform === "darwin" ? "/Contents/MacOS/markview": ""}`;
+console.log(path_to_app)
+var files = fs.readdirSync('/out');
 
 const app = new Application({
     path: path.join(
@@ -28,19 +31,19 @@ const app = new Application({
     )
 });
 
-jest.setTimeout(10000)
+jest.setTimeout(12000)
 
 describe("App", () => {
-    beforeEach(async () => {
+    beforeEach(() => {
         return app.start();
     });
 
-    afterEach(async () => {
+    afterEach(() => {
         if (app && app.isRunning()) return app.stop()
     });
 
-    test("Launch App", async () => {
-        const isVisible = await app.browserWindow.isVisible();
+    test("Test App Launching", () => {
+        let isVisible = app.browserWindow.isVisible();
         expect(isVisible).toBe(true);
     });
 });  
