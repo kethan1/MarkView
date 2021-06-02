@@ -22,6 +22,7 @@ switch (current_platform) {
 var path_to_app = `out/MarkView-${current_platform}-${current_arch === "x86" ? "ia32": current_arch}/markview${extension}${current_platform === "darwin" ? "/Contents/MacOS/markview": ""}`;
 console.log(path_to_app)
 var files = fs.readdirSync('out/');
+console.log(files);
 
 const app = new Application({
     path: path.join(
