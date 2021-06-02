@@ -5,7 +5,7 @@ const path = require('path'),
 module.exports = {
     packagerConfig: {
         "asar": true,
-        "icon": path.join(__dirname, "/assets/app_icons/app_icon"),
+        "icon": path.join(__dirname, "src/assets/app_icons/app_icon"),
         "executableName": "markview",
     },
     makers: [
@@ -25,7 +25,7 @@ module.exports = {
                 "shortName": "MarkView",
                 "shortcutFolderName": "MarkView",
                 "programFilesFolderName": "MarkView",
-                "appIconPath": path.join(__dirname, "/assets/app_icons/app_icon.ico"),
+                "appIconPath": path.join(__dirname, "src/assets/app_icons/app_icon.ico"),
                 "exe": "markview"
             }
         },
@@ -33,7 +33,7 @@ module.exports = {
             "name": "@electron-forge/maker-deb",
             "config": {
                 "maintainer": "Kethan Vegunta",
-                "icon": path.join(__dirname, "/assets/app_icons/app_icon.png")
+                "icon": path.join(__dirname, "src/assets/app_icons/app_icon.png")
             }
         },
         {
@@ -42,7 +42,7 @@ module.exports = {
                 "maintainer": "Kethan Vegunta",
                 "homepage": "https://github.com/kethan1/MarkView",
                 "license": "MIT",
-                "icon": path.join(__dirname, "/assets/app_icons/app_icon.png")
+                "icon": path.join(__dirname, "src/assets/app_icons/app_icon.png")
             }
         }
     ],
