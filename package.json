@@ -9,7 +9,7 @@
         "package": "tsc && electron-forge package",
         "make": "tsc && electron-forge make",
         "publish": "tsc && electron-forge publish",
-        "test": "jest",
+        "test": "jest --detectOpenHandles",
         "lint": "eslint --ext .ts ."
     },
     "keywords": [],
