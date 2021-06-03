@@ -41,8 +41,8 @@ describe("App", () => {
         if (app && app.isRunning()) return app.stop()
     });
 
-    test("Test App Launching", () => {
-        let isVisible = app.browserWindow.isVisible();
+    test("Test App Launching", async () => {
+        let isVisible = await app.browserWindow.isVisible();
         expect(isVisible).toBe(true);
     });
 });  
