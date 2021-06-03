@@ -25,6 +25,7 @@ jobs:
             export DISPLAY=:99.0
             Xvfb &
             sleep 3
+          fi
       - name: Test and Install
         shell: bash
         run: |
