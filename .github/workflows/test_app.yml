@@ -17,6 +17,14 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "14.x"
+      - name: Add Display for Linux
+        shell: bash
+        run: |
+          if [ "$RUNNER_OS" == "Linux" ]; then
+            sudo apt install -y xvfb
+            export DISPLAY=:99.0
+            Xvfb &
+            sleep 3
       - name: Test and Install
         shell: bash
         run: |

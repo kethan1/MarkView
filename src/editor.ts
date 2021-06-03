@@ -7,6 +7,10 @@ const fs = require('fs'), path = require('path'), { ipcRenderer }  = require('el
 // @ts-ignore
 const savePath = path.join(ipcRenderer.sendSync('getPath', 'documents'), "MarkView/")
 
+if (!fs.existsSync(savePath)) {
+    fs.mkdirSync(savePath);
+}
+
 document.addEventListener("DOMContentLoaded", function(event) {
     var easymde = new EasyMDE({ 
         element: document.getElementById("editor"),
@@ -22,7 +26,3 @@ document.addEventListener("DOMContentLoaded", function(event) {
         fs.writeFile(path.join(savePath, sessionStorage.getItem("editing")), easymde.value(), 'utf8', function(err: Error) { if (err) throw err; })
     });
 });
-
-if (!fs.existsSync(savePath)) {
-    fs.mkdirSync(savePath);
-}
