@@ -4,6 +4,9 @@ const fs = require('fs'), path = require('path'), { ipcRenderer } = require('ele
 /* eslint-disable */
 // @ts-ignore
 const savePath = path.join(ipcRenderer.sendSync('getPath', 'documents'), "MarkView/");
+if (!fs.existsSync(savePath)) {
+    fs.mkdirSync(savePath);
+}
 document.addEventListener("DOMContentLoaded", function (event) {
     var easymde = new EasyMDE({
         element: document.getElementById("editor"),
@@ -18,6 +21,3 @@ document.addEventListener("DOMContentLoaded", function (event) {
             throw err; });
     });
 });
-if (!fs.existsSync(savePath)) {
-    fs.mkdirSync(savePath);
-}

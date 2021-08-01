@@ -1,6 +1,11 @@
 /* eslint-disable */
 // @ts-ignore
-const fs = require('fs'), path = require('path'), { ipcRenderer }  = require('electron'),
+const fs = require('fs'),
+    // @ts-ignore
+    path = require('path'),
+    // @ts-ignore
+    { ipcRenderer }  = require('electron'),
+    // @ts-ignore
     EasyMDE = require('easymde');
 
 /* eslint-disable */
@@ -22,7 +27,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     easymde.value(fs.readFileSync(path.join(savePath, sessionStorage.getItem("editing")), "utf8"))
 
-    document.querySelector(".EasyMDEContainer").addEventListener("keypress", function(key) { // easymde doesn't have a way to listen for changes, but listening for keypress should work just as well
-        fs.writeFile(path.join(savePath, sessionStorage.getItem("editing")), easymde.value(), 'utf8', function(err: Error) { if (err) throw err; })
+    // easymde doesn't have a way to listen for changes, but listening for keypress should work just as well
+    document.querySelector(".EasyMDEContainer").addEventListener("keypress", function(key) { 
+        fs.writeFile(
+            path.join(savePath, sessionStorage.getItem("editing")),
+            easymde.value(), 'utf8', function(err: Error) { if (err) throw err; }
+        )
     });
 });

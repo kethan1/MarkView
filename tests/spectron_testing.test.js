@@ -1,8 +1,7 @@
 const { Application } = require("spectron"),
     path = require("path"),
     process = require("process"),
-    os = require("os"),
-    fs = require("fs");
+    os = require("os");
 
 var current_platform = os.platform();
 var current_arch = os.arch();
